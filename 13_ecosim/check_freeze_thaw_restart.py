@@ -17,7 +17,9 @@ REFERENCE_CHECKPOINT = (
 RESTART_CHECKPOINT = HERE / "ecosim_freeze_thaw_restart" / "checkpoint_final.h5"
 FIELDS = {
     "surface-temperature.cell.0": (1.0e-4, "absolute"),
-    "surface-evaporation_ground.cell.0": (1.0e-8, "relative"),
+    # EcoSIM outputs such as surface-evaporation_ground are no longer
+    # checkpointed; surface pressure checks the coupled water balance instead
+    "surface-pressure.cell.0": (1.0e-8, "relative"),
     "surface-snow_depth.cell.0": (1.0e-4, "absolute"),
 }
 
@@ -80,15 +82,15 @@ def main():
         ):
             failures.append((field, tolerance, tolerance_type))
 
-##    if failures:
-##        for field, tolerance, tolerance_type in failures:
-##            print(
-##                f"ERROR: {field} differs by "
-##                f"{abs(restarted[field] - reference[field]):.12g}; "
-##                f"tolerance is {tolerance:.12g} {tolerance_type}",
-##                file=sys.stderr,
-##            )
-##        return 1
+    if failures:
+        for field, tolerance, tolerance_type in failures:
+            print(
+                f"ERROR: {field} differs by "
+                f"{abs(restarted[field] - reference[field]):.12g}; "
+                f"tolerance is {tolerance:.12g} {tolerance_type}",
+                file=sys.stderr,
+            )
+        return 1
 
     return 0
 

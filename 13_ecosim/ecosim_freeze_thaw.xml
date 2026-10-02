@@ -425,17 +425,9 @@
         </ParameterList>
       </ParameterList>
       <!-- ECOSIM -->
-      <ParameterList name="surface-ecosim_source" type="ParameterList">
-        <Parameter name="evaluator type" type="string" value="independent variable constant"/>
-        <Parameter name="value" type="double" value="0.00"/>
-      </ParameterList>
       <ParameterList name="surface-energy_source_new" type="ParameterList">
         <Parameter name="evaluator type" type="string" value="additive evaluator"/>
         <Parameter name="dependencies" type="Array(string)" value="{surface-total_energy_source, surface-ecosim_source}"/>
-      </ParameterList>
-      <ParameterList name="surface-ecosim_water_source" type="ParameterList">
-        <Parameter name="evaluator type" type="string" value="independent variable constant"/>
-        <Parameter name="value" type="double" value="0.00"/>
       </ParameterList>
       <ParameterList name="hydraulic_conductivity" type="ParameterList">
         <Parameter name="evaluator type" type="string" value="independent variable constant"/>

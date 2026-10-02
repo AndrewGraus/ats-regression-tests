@@ -21,7 +21,8 @@ EXPECTED_ADVANCES = {
 }
 FIELDS = (
     "surface-temperature.cell.0",
-    "surface-evaporation_ground.cell.0",
+    # EcoSIM outputs such as surface-evaporation_ground are no longer checkpointed
+    "surface-pressure.cell.0",
     "surface-snow_depth.cell.0",
 )
 
