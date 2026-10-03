@@ -1,0 +1,8 @@
+Repository commits used for this reference run (2026-10-02, Debug build)
+
+ATS        smolins/ecosim_state_fix  c80871eb  (src/pks/ecosim/EcoSIM_ATS_interface.{cc,hh}
+                                               checked out from c80871eb over bb018ae8;
+                                               all other ATS files at bb018ae8)
+Amanzi     master                    42cadd935
+EcoSIM     smolins/ecosimAPI_state_fix 8912287b
+regression tests smolins/ecosim_pk   95d478e  (input from 8b9bcea + observations block)
