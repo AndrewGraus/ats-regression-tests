@@ -179,8 +179,27 @@ EcoSIM prescribed-phenology plant water questions in the PR review are open.
       <Parameter name="prescribe phenology" type="bool" value="true"/>
       <Parameter name="number of pfts" type="int" value="1"/>
       <Parameter name="microbe model" type="bool" value="false"/>
-      <Parameter name="starting day of year [0-364]" type="int" value="363"/>
-      <Parameter name="starting year" type="int" value="1995"/>
+      <!-- site and calendar from the hourly forcing file (time 0 = 1980-01-01 00:00 local solar time) -->
+      <ParameterList name="starting year" type="ParameterList">
+        <Parameter name="file" type="string" value="../data/daymet_TaylorRiverCO_hourly.h5"/>
+        <Parameter name="header" type="string" value="start year"/>
+      </ParameterList>
+      <ParameterList name="starting day of year [0-364]" type="ParameterList">
+        <Parameter name="file" type="string" value="../data/daymet_TaylorRiverCO_hourly.h5"/>
+        <Parameter name="header" type="string" value="start day of year [0-364]"/>
+      </ParameterList>
+      <ParameterList name="starting hour [h]" type="ParameterList">
+        <Parameter name="file" type="string" value="../data/daymet_TaylorRiverCO_hourly.h5"/>
+        <Parameter name="header" type="string" value="start hour [h]"/>
+      </ParameterList>
+      <ParameterList name="latitude [degrees]" type="ParameterList">
+        <Parameter name="file" type="string" value="../data/daymet_TaylorRiverCO_hourly.h5"/>
+        <Parameter name="header" type="string" value="latitude [deg]"/>
+      </ParameterList>
+      <ParameterList name="solar noon [h]" type="ParameterList">
+        <Parameter name="file" type="string" value="../data/daymet_TaylorRiverCO_hourly.h5"/>
+        <Parameter name="header" type="string" value="solar noon [h]"/>
+      </ParameterList>
       <ParameterList name="boundary conditions" type="ParameterList">
       </ParameterList>
 
@@ -535,7 +554,7 @@ EcoSIM prescribed-phenology plant water questions in the PR review are open.
             <Parameter name="component" type="string" value="cell"/>
             <ParameterList name="function" type="ParameterList">
               <ParameterList name="function-tabular" type="ParameterList">
-                <Parameter name="file" type="string" value="../data/daymet_TaylorRiverCO.h5"/>
+                <Parameter name="file" type="string" value="../data/daymet_TaylorRiverCO_hourly.h5"/>
                 <Parameter name="x header" type="string" value="time [s]"/>
                 <Parameter name="y header" type="string" value="precipitation snow [m SWE s^-1]"/>
               </ParameterList>
@@ -585,7 +604,7 @@ EcoSIM prescribed-phenology plant water questions in the PR review are open.
             <Parameter name="component" type="string" value="cell"/>
             <ParameterList name="function" type="ParameterList">
               <ParameterList name="function-tabular" type="ParameterList">
-                <Parameter name="file" type="string" value="../data/daymet_TaylorRiverCO.h5"/>
+                <Parameter name="file" type="string" value="../data/daymet_TaylorRiverCO_hourly.h5"/>
                 <Parameter name="x header" type="string" value="time [s]"/>
                 <Parameter name="y header" type="string" value="incoming shortwave radiation [W m^-2]"/>
               </ParameterList>
@@ -612,7 +631,7 @@ EcoSIM prescribed-phenology plant water questions in the PR review are open.
             <Parameter name="component" type="string" value="cell"/>
             <ParameterList name="function" type="ParameterList">
               <ParameterList name="function-tabular" type="ParameterList">
-                <Parameter name="file" type="string" value="../data/daymet_TaylorRiverCO.h5"/>
+                <Parameter name="file" type="string" value="../data/daymet_TaylorRiverCO_hourly.h5"/>
                 <Parameter name="x header" type="string" value="time [s]"/>
                 <Parameter name="y header" type="string" value="air temperature [K]"/>
               </ParameterList>
@@ -642,7 +661,7 @@ EcoSIM prescribed-phenology plant water questions in the PR review are open.
             <Parameter name="component" type="string" value="cell"/>
             <ParameterList name="function" type="ParameterList">
               <ParameterList name="function-tabular" type="ParameterList">
-                <Parameter name="file" type="string" value="../data/daymet_TaylorRiverCO.h5"/>
+                <Parameter name="file" type="string" value="../data/daymet_TaylorRiverCO_hourly.h5"/>
                 <Parameter name="x header" type="string" value="time [s]"/>
                 <Parameter name="y header" type="string" value="wind speed [m s^-1]"/>
               </ParameterList>
@@ -658,7 +677,7 @@ EcoSIM prescribed-phenology plant water questions in the PR review are open.
             <Parameter name="component" type="string" value="cell"/>
             <ParameterList name="function" type="ParameterList">
               <ParameterList name="function-tabular" type="ParameterList">
-                <Parameter name="file" type="string" value="../data/daymet_TaylorRiverCO.h5"/>
+                <Parameter name="file" type="string" value="../data/daymet_TaylorRiverCO_hourly.h5"/>
                 <Parameter name="x header" type="string" value="time [s]"/>
                 <Parameter name="y header" type="string" value="vapor pressure air [Pa]"/>
               </ParameterList>
@@ -874,7 +893,7 @@ EcoSIM prescribed-phenology plant water questions in the PR review are open.
             <Parameter name="component" type="string" value="cell"/>
             <ParameterList name="function" type="ParameterList">
               <ParameterList name="function-tabular" type="ParameterList">
-                <Parameter name="file" type="string" value="../data/daymet_TaylorRiverCO.h5"/>
+                <Parameter name="file" type="string" value="../data/daymet_TaylorRiverCO_hourly.h5"/>
                 <Parameter name="x header" type="string" value="time [s]"/>
                 <Parameter name="y header" type="string" value="precipitation rain [m s^-1]"/>
               </ParameterList>
