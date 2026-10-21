@@ -124,7 +124,7 @@ model.
     <ParameterList name="EcoSIM for ATS" type="ParameterList">
       <Parameter name="PK type" type="string" value="EcoSIM for ATS"/>
       <Parameter name="engine" type="string" value="EcoSIM"/>
-      <Parameter name="engine input file" type="string" value="/home/ctg/Work/code/ats_dev_dir/amanzi_tpls-build-master-Debug/ecosim/ecosim-0.1.0-source/input_data/ecosim_pftpar_20260915.nc"/>
+      <Parameter name="engine input file" type="string" value="../data/ecosim_pftpar_20261021.nc"/>
       <Parameter name="primary variable key" type="string" value="hydraulic_conductivity"/>
       <Parameter name="heat capacity [MJ mol^-1 K^-1]" type="double" value="2.0"/>
       <Parameter name="initial time step" type="double" value="3600" />
@@ -241,7 +241,7 @@ model.
 
       <ParameterList name="initial conditions" type="ParameterList">
 
-        <Parameter name="hydrostatic head [m]" type="double" value="-2.0"/>
+        <Parameter name="hydrostatic head [m]" type="double" value="-10.0"/>
         <Parameter name="hydrostatic water density [kg m^-3]" type="double" value="1000.0"/>
 
       </ParameterList>
@@ -296,7 +296,7 @@ model.
 
       <ParameterList name="initial conditions" type="ParameterList">
 
-        <Parameter name="value" type="double" value="270.0"/>
+        <Parameter name="value" type="double" value="275.0"/>
 
       </ParameterList>
 
