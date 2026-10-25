@@ -94,7 +94,7 @@
   <ParameterList name="cycle driver" type="ParameterList">
     <Parameter name="start time" type="double" value="0.0"/>
     <Parameter name="start time units" type="string" value="d"/>
-    <Parameter name="end time" type="double" value="200.0"/>
+    <Parameter name="end time" type="double" value="1826.0"/>
     <Parameter name="end time units" type="string" value="d"/>
     <ParameterList name="PK tree" type="ParameterList">
       <ParameterList name="top level MPC" type="ParameterList">
@@ -119,9 +119,9 @@
         </ParameterList>
       </ParameterList>
     </ParameterList>
-    <ParameterList name="timestep manager" type="ParameterList">
+    <!--<ParameterList name="timestep manager" type="ParameterList">
       <Parameter name="prescribed timesteps file name" type="string" value="../data/ecosim_freeze_thaw_dts.h5"/>
-    </ParameterList>
+    </ParameterList>-->
   </ParameterList>
   <ParameterList name="checkpoint" type="ParameterList">
     <Parameter name="cycles" type="Array(int)" value="{0, 1200, 2400, 3600, 4800}"/>

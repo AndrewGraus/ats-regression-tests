@@ -143,7 +143,7 @@ See data/standalone_match/README.md.
     <ParameterList name="EcoSIM for ATS" type="ParameterList">
       <Parameter name="PK type" type="string" value="EcoSIM for ATS" />
       <Parameter name="engine" type="string" value="EcoSIM" />
-      <Parameter name="engine input file" type="string" value="../data/ecosim_pftpar_20260303.nc" />
+      <Parameter name="engine input file" type="string" value="../data/ecosim_pftpar_20261021.nc" />
       <Parameter name="primary variable key" type="string" value="hydraulic_conductivity" />
       <Parameter name="heat capacity [MJ mol^-1 K^-1]" type="double" value="0.020" />
       <Parameter name="initial time step" type="double" value="3600" />
@@ -651,7 +651,7 @@ See data/standalone_match/README.md.
       <ParameterList name="surface-unfrozen_fraction" type="ParameterList">
         <Parameter name="evaluator type" type="string" value="unfrozen fraction" />
         <ParameterList name="unfrozen fraction model" type="ParameterList">
-          <Parameter name="transition width [K]" type="double" value="0.2" />
+          <Parameter name="transition width [K]" type="double" value="1.0" />
         </ParameterList>
       </ParameterList>
       <ParameterList name="surface-unfrozen_effective_depth" type="ParameterList">

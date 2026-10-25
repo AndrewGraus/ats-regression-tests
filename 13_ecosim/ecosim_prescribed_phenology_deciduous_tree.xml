@@ -11,9 +11,9 @@ model.
       <Parameter name="mesh type" type="string" value="generate mesh"/>
       <Parameter name="build columns from set" type="string" value="surface"/>
       <ParameterList name="generate mesh parameters" type="ParameterList">
-        <Parameter name="number of cells" type="Array(int)" value="{1, 1, 25}"/>
+        <Parameter name="number of cells" type="Array(int)" value="{1, 1, 100}"/>
         <Parameter name="domain low coordinate" type="Array(double)" value="{0.0, 0.0, 0.0}"/>
-        <Parameter name="domain high coordinate" type="Array(double)" value="{1.0, 1.0, 25.0}"/>
+        <Parameter name="domain high coordinate" type="Array(double)" value="{1.0, 1.0, 10.0}"/>
       </ParameterList>
     </ParameterList>
     <ParameterList name="surface" type="ParameterList">
@@ -34,7 +34,7 @@ model.
     <ParameterList name="subsurface domain" type="ParameterList">
       <ParameterList name="region: box" type="ParameterList">
         <Parameter name="low coordinate" type="Array(double)" value="{0.0, 0.0, 0.0}"/>
-        <Parameter name="high coordinate" type="Array(double)" value="{1.0, 1.0, 25.0}"/>
+        <Parameter name="high coordinate" type="Array(double)" value="{1.0, 1.0, 10.0}"/>
       </ParameterList>
     </ParameterList>
     <ParameterList name="surface domain" type="ParameterList">
@@ -43,7 +43,7 @@ model.
     </ParameterList>
     <ParameterList name="surface" type="ParameterList">
       <ParameterList name="region: plane" type="ParameterList">
-        <Parameter name="point" type="Array(double)" value="{0.5, 0.5, 25.0}"/>
+        <Parameter name="point" type="Array(double)" value="{0.5, 0.5, 10.0}"/>
         <Parameter name="normal" type="Array(double)" value="{0.0, 0.0, 1.0}"/>
       </ParameterList>
     </ParameterList>
@@ -61,8 +61,8 @@ model.
     </ParameterList>
     <ParameterList name="top_cell_obs" type="ParameterList">
       <ParameterList name="region: box" type="ParameterList">
-        <Parameter name="low coordinate" type="Array(double)" value="{0.0, 0.0, 24.0}"/>
-        <Parameter name="high coordinate" type="Array(double)" value="{1.0, 1.0, 25.0}"/>
+        <Parameter name="low coordinate" type="Array(double)" value="{0.0, 0.0, 9.9}"/>
+        <Parameter name="high coordinate" type="Array(double)" value="{1.0, 1.0, 10.0}"/>
       </ParameterList>
     </ParameterList>
   </ParameterList>
@@ -136,6 +136,9 @@ model.
       <Parameter name="prescribe phenology" type="bool" value="true"/>
       <Parameter name="number of pfts" type="int" value="1"/>
       <Parameter name="starting day of year [0-364]" type="int" value="363"/>
+      <Parameter name="starting hour" type="int" value="0"/>
+      <Parameter name="latitude [deg]" type="double" value="38.8837"/>
+      <Parameter name="solar noon [h]" type="double" value="12.0"/>
       <Parameter name="starting year" type="int" value="1995"/>
       <ParameterList name="boundary conditions" type="ParameterList">
       </ParameterList>
@@ -241,7 +244,7 @@ model.
 
       <ParameterList name="initial conditions" type="ParameterList">
 
-        <Parameter name="hydrostatic head [m]" type="double" value="-10.0"/>
+        <Parameter name="hydrostatic head [m]" type="double" value="-8.0"/>
         <Parameter name="hydrostatic water density [kg m^-3]" type="double" value="1000.0"/>
 
       </ParameterList>
@@ -287,7 +290,7 @@ model.
             <Parameter name="regions" type="Array(string)" value="{bottom face}"/>
             <ParameterList name="boundary temperature" type="ParameterList">
               <ParameterList name="function-constant" type="ParameterList">
-                <Parameter name="value" type="double" value="280.0"/>
+                <Parameter name="value" type="double" value="285.15"/>
               </ParameterList>
             </ParameterList>
           </ParameterList>
@@ -296,7 +299,7 @@ model.
 
       <ParameterList name="initial conditions" type="ParameterList">
 
-        <Parameter name="value" type="double" value="275.0"/>
+        <Parameter name="value" type="double" value="285.15"/>
 
       </ParameterList>
 
@@ -676,7 +679,7 @@ model.
       <ParameterList name="surface-unfrozen_fraction" type="ParameterList">
         <Parameter name="evaluator type" type="string" value="unfrozen fraction"/>
         <ParameterList name="unfrozen fraction model" type="ParameterList">
-          <Parameter name="transition width [K]" type="double" value="0.2"/>
+          <Parameter name="transition width [K]" type="double" value="1.0"/>
         </ParameterList>
       </ParameterList>
       <ParameterList name="surface-unfrozen_effective_depth" type="ParameterList">
